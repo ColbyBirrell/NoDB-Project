@@ -45,9 +45,15 @@ module.exports = {
     },
 
     deleteChores(req, res) {
-        // const { id } = req.params
+        const { id } = req.params
 
+        const index = chores.findIndex((element) => {
+            return element.id === +id
+        })
 
+        chores.splice(index, 1)
+
+        res.status(200).send(chores)
     }
 
 
