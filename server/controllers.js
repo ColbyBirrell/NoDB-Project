@@ -1,10 +1,11 @@
 const chores = [
     {
-        chore: `chore one`
+        chore: "make more chore items",
+        id: 0
     }
 ]
 
-let id = 0
+let id = 1
 
 
 module.exports = {
@@ -14,20 +15,32 @@ module.exports = {
     },
 
     makeChores(req, res) {
-        // const {chore} = req.body
-        // chore.id = id
-        // id++
 
-        // chores.push(chore)
+        const { chore } = req.body
+        const newChore = {
+            chore,
+            id
+        }
 
+        id++
 
+        chores.push(newChore)
+
+        res.status(200).send(chores)
 
     },
 
     editChores(req, res) {
-        // const { id } = req.params
-        // const { chore } = req.body
+        const { id } = req.params
+        const { chore } = req.body
 
+        const index = chores.findIndex((element) => {
+            return element.id === +id
+        })
+
+        chores[index].chore = chore
+
+        res.status(200).send(chores)
 
     },
 

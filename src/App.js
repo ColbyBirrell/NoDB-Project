@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header'
 import Addchore from './components/Addchore'
 import Chorelist from './components/Chorelist'
+import axios from 'axios';
 
 class App extends Component {
   constructor() {
@@ -14,6 +15,33 @@ class App extends Component {
 
 
   }
+
+
+  componentDidMount() {
+    axios.get('/api/chores').then((res) => {
+      this.setState({
+        chores: res.data
+      })
+    })
+  }
+
+  newChore() {
+
+  }
+
+  editChore() {
+
+  }
+
+  deleteChore() {
+
+  }
+
+
+
+
+
+
 
 
   render() {
