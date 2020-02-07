@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 class Chores extends Component {
     constructor(props) {
         super(props)
-
+        // console.log(this.props.chores.id)
         this.state = {
             userInput: '',
             isEditing: false
@@ -12,14 +12,31 @@ class Chores extends Component {
         }
     }
 
+    editToggle = () => {
+
+    }
+
+    handleChange = () => {
+
+    }
+
 
     render() {
         return (
             <div>
                 <p>
-                    Chores.js
+                    {this.props.chores.chore}
+
+
                     <button>Edit</button>
-                    <button>Delete</button>
+
+
+
+                    <button onClick={() => {
+                        this.props.deleteChore(this.props.chores.id)
+                    }}
+                    >Delete
+                    </button>
                 </p>
             </div>
         )

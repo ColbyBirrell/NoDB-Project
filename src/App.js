@@ -25,21 +25,27 @@ class App extends Component {
     })
   }
 
-  newChore() {
+  newChore = (userInput) => {
+    // console.log(userInput)
+    axios.post(`/api/chores`, { chore: userInput }).then((res) => {
+      this.setState({
+        chores: res.data
+      })
+    })
+  }
+
+  editChore(id, userInput) {
 
   }
 
-  editChore() {
-
+  deleteChore = (id) => {
+    axios.delete(`/api/chores/${id}`).then(res => {
+      // console.log(res.data)
+      this.setState({
+        chores: res.data
+      })
+    })
   }
-
-  deleteChore() {
-
-  }
-
-
-
-
 
 
 
@@ -49,8 +55,8 @@ class App extends Component {
       <div className="App">
 
         <Header />
-        <Addchore />
-        <Chorelist />
+        <Addchore newChore={this.newChore} />
+        <Chorelist chores={this.state.chores} deleteChore={this.deleteChore} editChore={this.editChore} />
 
 
       </div>
