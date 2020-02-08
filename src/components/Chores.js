@@ -25,13 +25,21 @@ class Chores extends Component {
         })
     }
 
+    keyPressed = (event) => {
+        if (event.key === "Enter") {
+            this.props.editChore(this.props.chores.id, this.state.userInput)
+            this.editToggle()
+        }
+    }
+
+
 
     render() {
         return (
             <div className='chore-div'>
                 {this.state.isEditing ? (
                     <div>
-                        <input className='edit-input' onChange={this.handleChange} placeholder={this.props.chores.chore} />
+                        <input className='edit-input' onChange={this.handleChange} defaultValue={`${this.props.chores.chore}`} onKeyPress={this.keyPressed} />
                         <button className='save-button'
                             onClick={() => {
                                 this.props.editChore(this.props.chores.id, this.state.userInput)

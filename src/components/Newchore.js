@@ -17,6 +17,14 @@ class Newchore extends Component {
         })
     }
 
+    keyPressed = (event) => {
+        if (event.key === "Enter") {
+            this.props.newChore(this.state.userInput)
+            this.setState({ userInput: '' })
+        }
+    }
+
+
     render() {
         return (
             <div>
@@ -24,6 +32,7 @@ class Newchore extends Component {
                     onChange={(event) => this.handleChange(event.target.value)}
                     placeholder={` Add a New Chore `}
                     value={this.state.userInput}
+                    onKeyPress={this.keyPressed}
                 />
                 <button className="add-button" onClick={() => {
                     this.props.newChore(this.state.userInput)
@@ -34,5 +43,6 @@ class Newchore extends Component {
         )
     }
 }
+
 
 export default Newchore
