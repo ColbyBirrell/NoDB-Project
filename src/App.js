@@ -30,7 +30,7 @@ class App extends Component {
     axios.post(`/api/chores`, { chore: userInput }).then((res) => {
       this.setState({
         chores: res.data
-      }).catch(err => console.log(err))
+      })
     })
   }
 

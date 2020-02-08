@@ -25,10 +25,11 @@ class Newchore extends Component {
                     placeholder={` Add a New Chore `}
                     value={this.state.userInput}
                 />
-                <button onClick={() => {
+                <button className="add-button" onClick={() => {
                     this.props.newChore(this.state.userInput)
                     this.setState({ userInput: '' })
-                }}>ADD IT!!</button>
+                }}>
+                    ADD IT!!</button>
             </div>
         )
     }
