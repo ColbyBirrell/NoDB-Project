@@ -15,7 +15,7 @@ function Chorelist(props) {
     })
 
     return (
-        <div>
+        <div className='chore-container'>
             <h3>Chores To Do</h3>
             {listChores}
 

@@ -28,10 +28,10 @@ class Chores extends Component {
 
     render() {
         return (
-            <div>
+            <div className='chore-div'>
                 {this.state.isEditing ? (
                     <div>
-                        <input onChange={this.handleChange} />
+                        <input className='edit-input' onChange={this.handleChange} />
                         <button
                             onClick={() => {
                                 this.props.editChore(this.props.chores.id, this.state.userInput)
@@ -41,7 +41,7 @@ class Chores extends Component {
                             SAVE IT!</button>
                     </div>
                 ) : (
-                        <p onDoubleClick={this.editToggle} >
+                        <p className='chore-text' onDoubleClick={this.editToggle} >
                             {this.props.chores.chore}
                         </p>
                     )
@@ -54,7 +54,7 @@ class Chores extends Component {
                 <button onClick={() => {
                     this.props.deleteChore(this.props.chores.id)
                 }}
-                >Delete
+                >DELETE IT!!!
                     </button>
 
 

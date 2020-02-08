@@ -22,13 +22,13 @@ class Newchore extends Component {
             <div>
                 <input
                     onChange={(event) => this.handleChange(event.target.value)}
-                    placeholder={`Newchore.js add a chore`}
+                    placeholder={` Add a New Chore `}
                     value={this.state.userInput}
                 />
                 <button onClick={() => {
                     this.props.newChore(this.state.userInput)
                     this.setState({ userInput: '' })
-                }}>Add to Chores</button>
+                }}>ADD IT!!</button>
             </div>
         )
     }

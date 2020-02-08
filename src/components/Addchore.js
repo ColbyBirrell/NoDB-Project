@@ -5,7 +5,7 @@ import Newchore from './Newchore'
 
 function Addchore(props) {
     return (
-        <div>
+        <div className='add-container'>
             <Newchore newChore={props.newChore} />
         </div>
     )
