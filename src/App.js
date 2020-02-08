@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header'
 import Addchore from './components/Addchore'
 import Chorelist from './components/Chorelist'
+import Footer from './components/Footer'
 import axios from 'axios';
 
 class App extends Component {
@@ -64,7 +65,7 @@ class App extends Component {
           chores={this.state.chores}
           deleteChore={this.deleteChore}
           editChore={this.editChore} />
-
+        <Footer />
 
       </div>
     );
