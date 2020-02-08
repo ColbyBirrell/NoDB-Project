@@ -13,31 +13,51 @@ class Chores extends Component {
     }
 
     editToggle = () => {
+        this.setState({
+            isEditing: !this.state.isEditing
+        })
 
     }
 
-    handleChange = () => {
-
+    handleChange = (event) => {
+        this.setState({
+            userInput: event.target.value
+        })
     }
 
 
     render() {
         return (
             <div>
-                <p>
-                    {this.props.chores.chore}
+                {this.state.isEditing ? (
+                    <div>
+                        <input onChange={this.handleChange} />
+                        <button
+                            onClick={() => {
+                                this.props.editChore(this.props.chores.id, this.state.userInput)
+                                this.editToggle()
+                            }}
+                        >
+                            SAVE IT!</button>
+                    </div>
+                ) : (
+                        <p onDoubleClick={this.editToggle} >
+                            {this.props.chores.chore}
+                        </p>
+                    )
+                }
 
 
-                    <button>Edit</button>
 
 
 
-                    <button onClick={() => {
-                        this.props.deleteChore(this.props.chores.id)
-                    }}
-                    >Delete
+                <button onClick={() => {
+                    this.props.deleteChore(this.props.chores.id)
+                }}
+                >Delete
                     </button>
-                </p>
+
+
             </div>
         )
     }

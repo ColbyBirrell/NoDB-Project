@@ -34,8 +34,12 @@ class App extends Component {
     })
   }
 
-  editChore(id, userInput) {
-
+  editChore = (id, userInput) => {
+    axios.put(`/api/chores/${id}`, { chore: userInput }).then((res) => {
+      this.setState({
+        chores: res.data
+      })
+    })
   }
 
   deleteChore = (id) => {
@@ -56,7 +60,10 @@ class App extends Component {
 
         <Header />
         <Addchore newChore={this.newChore} />
-        <Chorelist chores={this.state.chores} deleteChore={this.deleteChore} editChore={this.editChore} />
+        <Chorelist
+          chores={this.state.chores}
+          deleteChore={this.deleteChore}
+          editChore={this.editChore} />
 
 
       </div>

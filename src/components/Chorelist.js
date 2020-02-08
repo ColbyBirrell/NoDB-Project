@@ -6,14 +6,19 @@ import Chores from './Chores'
 function Chorelist(props) {
     // const { chores } = props.chores
     const listChores = props.chores.map((element) => {
-        return <Chores editChore={props.editChore} deleteChore={props.deleteChore} chores={element} key={element.id} />
+        return (<Chores
+            editChore={props.editChore}
+            deleteChore={props.deleteChore}
+            chores={element}
+            key={element.id} />
+        )
     })
 
     return (
         <div>
             <h3>Chores To Do</h3>
             {listChores}
-            {/* <Chores /> */}
+
 
         </div>
     )

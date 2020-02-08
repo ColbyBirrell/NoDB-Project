@@ -23,8 +23,12 @@ class Newchore extends Component {
                 <input
                     onChange={(event) => this.handleChange(event.target.value)}
                     placeholder={`Newchore.js add a chore`}
+                    value={this.state.userInput}
                 />
-                <button onClick={() => { return this.props.newChore(this.state.userInput) }}>Add to Chores</button>
+                <button onClick={() => {
+                    this.props.newChore(this.state.userInput)
+                    this.setState({ userInput: '' })
+                }}>Add to Chores</button>
             </div>
         )
     }
