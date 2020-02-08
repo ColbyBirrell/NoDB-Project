@@ -20,7 +20,7 @@ class Newchore extends Component {
     render() {
         return (
             <div>
-                <input
+                <input className="add-input"
                     onChange={(event) => this.handleChange(event.target.value)}
                     placeholder={` Add a New Chore `}
                     value={this.state.userInput}

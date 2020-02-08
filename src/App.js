@@ -22,7 +22,7 @@ class App extends Component {
       this.setState({
         chores: res.data
       })
-    })
+    }).catch((error) => { console.error(error) })
   }
 
   newChore = (userInput) => {
@@ -31,7 +31,7 @@ class App extends Component {
       this.setState({
         chores: res.data
       })
-    })
+    }).catch((error) => { console.error(error) })
   }
 
   editChore = (id, userInput) => {
@@ -39,7 +39,7 @@ class App extends Component {
       this.setState({
         chores: res.data
       })
-    })
+    }).catch((error) => { console.error(error) })
   }
 
   deleteChore = (id) => {
@@ -48,7 +48,7 @@ class App extends Component {
       this.setState({
         chores: res.data
       })
-    })
+    }).catch((error) => { console.error(error) })
   }
 
 

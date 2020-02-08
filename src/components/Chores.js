@@ -54,7 +54,7 @@ class Chores extends Component {
                 <button className='delete-button' onClick={() => {
                     this.props.deleteChore(this.props.chores.id)
                 }}
-                >DELETE IT!!!
+                >DONE !!!
                     </button>
 
 
