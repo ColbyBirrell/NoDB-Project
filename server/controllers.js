@@ -1,3 +1,7 @@
+const config = require('../src/config')
+const axios = require('axios')
+
+
 const chores = [
     {
         chore: "make more chore items",
@@ -6,6 +10,9 @@ const chores = [
 ]
 
 let id = 1
+
+let weatherInfo = 1
+// let weatherSummary = ''
 
 
 module.exports = {
@@ -54,7 +61,18 @@ module.exports = {
         chores.splice(index, 1)
 
         res.status(200).send(chores)
+    },
+
+    getWeather(req, response) {
+        axios.get(`https://api.darksky.net/forecast/${config.weatherSecret}/40.4463,-111.8021`).then((res) => {
+            weatherInfo = (parseInt(res.data.currently.temperature))
+            // weatherSummary = (res.data.currently.summary)
+            response.status(200).send(`${weatherInfo}`)
+        })
+
+
     }
+
 
 
 

@@ -26,6 +26,9 @@ header{
   align-items: center;
   height: 20vh;
   padding-left: 20px;
+  padding-right: 115px;
+  justify-content: space-between;
+  font-family: 'NASVILL';
  
   /* justify-content: center;   */
 }
@@ -35,6 +38,12 @@ h1 {
   font-family: 'NASHVILL';
   color: #faebd7;
   /* text-decoration: underline; */
+}
+
+.weather{
+  text-align: center;
+  color: antiquewhite;
+  font-size: 2rem;
 }
 
 .add-container{

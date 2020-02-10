@@ -13,6 +13,7 @@ app.post(`/api/chores`, ctrl.makeChores)
 app.put(`/api/chores/:id`, ctrl.editChores)
 app.delete(`/api/chores/:id`, ctrl.deleteChores)
 
+app.get(`/api/weather`, ctrl.getWeather)
 
 
 

@@ -36,6 +36,11 @@ class App extends Component {
   }
 
   editChore = (id, userInput) => {
+    if (!userInput) {
+      alert(`Chore must be edited before submit`)
+      return;
+    }
+
     axios.put(`/api/chores/${id}`, { chore: userInput }).then((res) => {
       this.setState({
         chores: res.data

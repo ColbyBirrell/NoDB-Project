@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import axios from 'axios'
+import axios from 'axios'
 // import cors from 'cors'
 // import weatherSecret from '../config'
 
@@ -14,24 +14,23 @@ class Header extends Component {
         }
     }
 
+    componentDidMount() {
+        axios.get(`/api/weather`).then(res => {
+            this.setState({
+                weatherInfo: res.data
+            })
+        })
+    }
 
-    // componentDidMount() {
-    //     axios.get(`https://api.darksky.net/forecast/${weatherSecret}/40.4463,-111.8021`).then((res) => {
-    //         console.log(res.data)
-    //         this.setState({
-    //             weatherInfo: `${res.data.currently.temperature} ${res.data.currently.summary}`
-    //         })
-    //     })
-    // }
 
 
     render() {
         return (
             <header>
                 <h1>Farm Chores</h1>
-                {/* <div>
-                    {this.state.weatherInfo}
-                </div> */}
+                <div className='weather'>
+                    Currently {this.state.weatherInfo} &#8457;
+                </div>
             </header>
         )
     }
