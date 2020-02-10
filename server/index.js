@@ -3,7 +3,7 @@ const express = require('express')
 const ctrl = require('./controllers')
 
 const app = express()
-const PORT = 6969
+const PORT = 5678  //'cause Im immature...
 
 app.use(express.json())
 
